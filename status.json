@@ -34,6 +34,13 @@
       "dinner": true,
       "payment": "회식비",
       "github": "yunhong-rpls"
+    },
+    {
+      "name": "김명석",
+      "pc": true,
+      "dinner": true,
+      "payment": "사비",
+      "github": "myeongseok-rpls"
     }
   ]
 }
