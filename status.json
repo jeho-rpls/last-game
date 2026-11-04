@@ -48,6 +48,13 @@
       "dinner": true,
       "payment": "회식비",
       "github": "kangsan-rpls"
+    },
+    {
+      "name": "문성호",
+      "pc": true,
+      "dinner": true,
+      "payment": "사비",
+      "github": "sungho-rpls"
     }
   ]
 }
