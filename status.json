@@ -6,6 +6,13 @@
       "dinner": true,
       "payment": "회식비",
       "github": "bongsu-rapportlabs"
+    },
+    {
+      "name": "정제호",
+      "pc": true,
+      "dinner": true,
+      "payment": "회식비",
+      "github": "jeho-rpls"
     }
   ]
 }
