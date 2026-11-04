@@ -1,3 +1,11 @@
 {
-  "rows": []
+  "rows": [
+    {
+      "name": "최봉수",
+      "pc": true,
+      "dinner": true,
+      "payment": "회식비",
+      "github": "bongsu-rapportlabs"
+    }
+  ]
 }
