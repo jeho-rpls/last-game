@@ -11,4 +11,5 @@ https://jeho-rpls.github.io/last-game/
 
 | 이름 | GitHub | PC방 | 저녁 | 식사비 |
 | --- | --- | --- | --- | --- |
+| 연속B | `jeho-rpls` | ☐ | ☐ |  |
 <!-- status:end -->
