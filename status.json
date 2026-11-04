@@ -13,6 +13,13 @@
       "dinner": true,
       "payment": "회식비",
       "github": "jeho-rpls"
+    },
+    {
+      "name": "킹카성준",
+      "pc": true,
+      "dinner": true,
+      "payment": "회식비",
+      "github": "seongjun-rpls"
     }
   ]
 }
