@@ -1,11 +1,3 @@
 {
-  "rows": [
-    {
-      "name": "연속B",
-      "pc": false,
-      "dinner": false,
-      "payment": null,
-      "github": "jeho-rpls"
-    }
-  ]
+  "rows": []
 }
