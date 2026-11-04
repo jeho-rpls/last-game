@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src https://raw.githubusercontent.com; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="robots" content="noindex">
 <title>마지막 한 판</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -232,7 +232,8 @@
 
   async function loadGuests() {
     try {
-      const res = await fetch(`https://raw.githubusercontent.com/${REPO}/main/status.json`, { cache: 'no-cache' });
+      // raw.githubusercontent는 쿼리를 붙여도 5분 캐시를 돌려줘서 Pages의 사본을 읽는다.
+      const res = await fetch(`status.json?t=${Date.now()}`);
       if (!res.ok) throw new Error(res.status);
       renderGuests((await res.json()).rows);
     } catch {

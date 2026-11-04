@@ -18,7 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      # 기본값은 이벤트 시점 커밋이라, 앞선 실행이 push한 뒤 돌면 push가 거부된다.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
       - run: node scripts/tally.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
