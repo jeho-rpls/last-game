@@ -41,6 +41,13 @@
       "dinner": true,
       "payment": "사비",
       "github": "myeongseok-rpls"
+    },
+    {
+      "name": "장강산",
+      "pc": true,
+      "dinner": true,
+      "payment": "회식비",
+      "github": "kangsan-rpls"
     }
   ]
 }
