@@ -20,6 +20,13 @@
       "dinner": true,
       "payment": "회식비",
       "github": "seongjun-rpls"
+    },
+    {
+      "name": "최준우",
+      "pc": true,
+      "dinner": true,
+      "payment": "사비",
+      "github": "junwoo-choi-rapportlabs"
     }
   ]
 }
