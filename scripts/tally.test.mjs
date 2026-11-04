@@ -66,7 +66,8 @@ test('현황 표에 체크와 인원수가 나온다', () => {
     { name: '가', github: 'a', pc: true, dinner: true, payment: '회식비' },
     { name: '나', github: 'b', pc: true, dinner: false, payment: null },
   ]);
-  assert.match(text, /PC방 2명, 저녁 1명 \(회식비 1명, 사비 0명\)/);
+  assert.match(text, /\*\*1부 참전 명단 2명\*\*: 가, 나/);
+  assert.match(text, /\*\*2부 피로연 명단 1명\*\* \(회식비 1명, 사비 0명\): 가\(회식비\)/);
   assert.match(text, /\| 가 \| `a` \| ☑ \| ☑ \| 회식비 \|/);
   assert.match(text, /\| 나 \| `b` \| ☑ \| ☐ \|  \|/);
 });

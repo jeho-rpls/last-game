@@ -49,8 +49,12 @@ export function tally(issues) {
 export function renderStatus(rows) {
   const box = (checked) => (checked ? '☑' : '☐');
   const count = (test) => rows.filter(test).length;
+  const fighters = rows.filter((r) => r.pc).map((r) => r.name);
+  const diners = rows.filter((r) => r.dinner).map((r) => `${r.name}(${r.payment})`);
   return [
-    `PC방 ${count((r) => r.pc)}명, 저녁 ${count((r) => r.dinner)}명 (회식비 ${count((r) => r.payment === '회식비')}명, 사비 ${count((r) => r.payment === '사비')}명)`,
+    `**1부 참전 명단 ${fighters.length}명**: ${fighters.join(', ')}`,
+    '',
+    `**2부 피로연 명단 ${diners.length}명** (회식비 ${count((r) => r.payment === '회식비')}명, 사비 ${count((r) => r.payment === '사비')}명): ${diners.join(', ')}`,
     '',
     '| 이름 | GitHub | PC방 | 저녁 | 식사비 |',
     '| --- | --- | --- | --- | --- |',

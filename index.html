@@ -95,10 +95,11 @@
   button:hover { background: #76572f; }
   :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
-  table { width: 100%; border-collapse: collapse; font-size: 15px; }
-  th, td { padding: 8px 4px; border-bottom: 1px solid var(--line); }
-  th { color: var(--soft); font-weight: 400; }
-  .count { margin: 0 0 12px; }
+  .roster { display: grid; gap: 16px; }
+  .roster h3 { margin: 0 0 8px; font-size: 16px; }
+  .roster ul { margin: 0; padding: 0; list-style: none; }
+  .roster li { padding: 4px 0; border-top: 1px solid var(--line); }
+  .roster .empty { margin: 0; color: var(--soft); font-size: 14px; }
   @media (max-width: 380px) { main { padding: 48px 24px; } h1 { font-size: 30px; } }
 </style>
 </head>
@@ -204,21 +205,29 @@
     return el;
   }
 
-  function row(tag, values) {
-    const tr = document.createElement('tr');
-    tr.append(...values.map((value) => cell(tag, value)));
-    return tr;
+  function roster(title, names) {
+    const block = document.createElement('div');
+    block.append(cell('h3', `${title} ${names.length}명`));
+    if (names.length) {
+      const list = document.createElement('ul');
+      list.append(...names.map((name) => cell('li', name)));
+      block.append(list);
+    } else {
+      const empty = cell('p', '아직 없습니다.');
+      empty.className = 'empty';
+      block.append(empty);
+    }
+    return block;
   }
 
   function renderGuests(rows) {
-    const box = (checked) => (checked ? '☑' : '☐');
-    const count = (test) => rows.filter(test).length;
-    const summary = cell('p', `1부 ${count((r) => r.pc)}명, 2부 ${count((r) => r.dinner)}명`);
-    summary.className = 'count';
-    const table = document.createElement('table');
-    table.append(row('th', ['성함', '1부', '2부', '식사비']));
-    table.append(...rows.map((r) => row('td', [r.name, box(r.pc), box(r.dinner), r.payment ?? ''])));
-    guests.replaceChildren(summary, table);
+    const wrap = document.createElement('div');
+    wrap.className = 'roster';
+    wrap.append(
+      roster('1부 참전 명단', rows.filter((r) => r.pc).map((r) => r.name)),
+      roster('2부 피로연 명단', rows.filter((r) => r.dinner).map((r) => `${r.name} (${r.payment})`)),
+    );
+    guests.replaceChildren(wrap);
   }
 
   async function loadGuests() {
