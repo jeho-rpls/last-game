@@ -1,3 +1,11 @@
 {
-  "rows": []
+  "rows": [
+    {
+      "name": "시험 제출",
+      "pc": true,
+      "dinner": true,
+      "payment": "회식비",
+      "github": "jeho-rpls"
+    }
+  ]
 }
