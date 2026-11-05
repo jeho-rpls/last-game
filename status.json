@@ -62,6 +62,13 @@
       "dinner": true,
       "payment": "사비",
       "github": "rpls-byeongwoo"
+    },
+    {
+      "name": "김범환",
+      "pc": true,
+      "dinner": false,
+      "payment": null,
+      "github": "bumhwan"
     }
   ]
 }
