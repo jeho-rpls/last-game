@@ -55,6 +55,13 @@
       "dinner": true,
       "payment": "사비",
       "github": "sungho-rpls"
+    },
+    {
+      "name": "이병우",
+      "pc": true,
+      "dinner": true,
+      "payment": "사비",
+      "github": "rpls-byeongwoo"
     }
   ]
 }
